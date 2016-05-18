@@ -1,13 +1,12 @@
-# CC = gcc
-CFLAGS = -Wall -g   
-LDFLAGS = -lpthread 
+CC = gcc
+CFLAGS = -Wall
+OUTPUT = diskinfo disklist diskget
 
-A2OBJS = assign2.o train.o
+.PHONY: all $(OUTPUT)
+all: $(OUTPUT)
 
-all: assign2 
+$(OUTPUT): 
+	$(CC) $@.c -o $@
 
-assign2: $(A2OBJS)
-	$(CXX) $(CFLAGS) -o assign2 $(A2OBJS) $(LDFLAGS) 
 
-clean: 
-	rm -rf $(A2OBJS) assign2 
+
