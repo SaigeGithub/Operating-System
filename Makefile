@@ -1,12 +1,13 @@
-CFLAGS = -Wall -g  
-LDFLAGS =  
+# CC = gcc
+CFLAGS = -Wall -g   
+LDFLAGS = -lpthread 
 
-OBJS = main.o
+A2OBJS = assign2.o train.o
 
-all: a1 
+all: assign2 
 
-a1: $(OBJS)
-	$(CC) $(CFLAGS) -o a1 $(OBJS) $(LDFLAGS) -lreadline -lhistory -ltermcap
+assign2: $(A2OBJS)
+	$(CXX) $(CFLAGS) -o assign2 $(A2OBJS) $(LDFLAGS) 
 
 clean: 
-	rm -rf $(OBJS) a1 
+	rm -rf $(A2OBJS) assign2 
